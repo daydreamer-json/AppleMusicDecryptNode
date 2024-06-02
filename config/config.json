@@ -1,0 +1,13 @@
+{
+  "base": {
+    "appName": "apple-music-decrypt-node",
+    "appCopyrightShort": "(C) daydreamer-json"
+  },
+  "logger": {
+    "logLevel": "trace"
+  },
+  "devices": {
+    "agentPort": 10020,
+    "processName": "com.apple.android.music"
+  }
+}
