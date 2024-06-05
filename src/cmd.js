@@ -6,10 +6,17 @@ import testMainCmdHandler from './test.js';
 async function parseCommand () {
   yargs(hideBin(process.argv))
     .command({
-      'command': 'test',
+      'command': 'test [url]',
       // 'aliases': ['tst'],
       'desc': 'Test command',
-      'builder': (yargs) => {},
+      'builder': (yargs) => {
+        yargs
+          .positional('url', {
+            'desc': 'Apple Music URL',
+            'type': 'string'
+          })
+          .demandOption(['url'])
+      },
       'handler': async (argv) => {
         await testMainCmdHandler(argv);
       }
